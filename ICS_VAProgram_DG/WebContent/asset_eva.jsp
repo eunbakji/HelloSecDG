@@ -76,12 +76,10 @@
 <!-- </form> -->
 
    
-  </div>
-  
-  
+  </div> 
     <div id = "evaluation_table" style=" height:auto;padding-left:10px;margin:10px; overflow:scroll;display:none" >
     <form name = form1 action = "" method = post>
-        <table class="evaluation_table" style="text-align: center; border : 1px solid #dddddd">
+        <table class="evaluation_table" id = "grid"style="text-align: center; border : 1px solid #dddddd">
           <thead>
           	<tr>
           	 <th style = "background-color : #eeeeee; text-align:center;"> </th>
@@ -99,7 +97,7 @@
           
 		<c:forEach var ="data" items="${evaDAO.getControlItem() }">
         	<tr>
-        		<td><input id = "checkbox" type="checkbox"></td>
+        		<td><input id = "checkbox" name = "aa[]" type="checkbox"></td>
 				<td>${data.no}</td>
 		        <td>${data.control_field}</td>
 		        <td>${data.control_item_no}</td>
@@ -115,12 +113,21 @@
 
 
         </table>
+       <button type="button" value="평가하기" id="selectBtn" onclick="checkFun();">평가하기</button>
+       <script src = "https://code.jquery.com/jquery-3.1.1.min.js">
+       </script>
+	    
+  
+   
       </form>  
       </div>
       <div id = button style="padding-left:10px;margin:10px" align="right">
-<button> <a href="Result_1.html" class="" title="평가하기" target="_top">평가하기</a></button>
+
+
 
 </div>
+
+
 </article>
 
      <footer><span>Copyright @kimjuyeon @kimeunji@yunjuhae</span></footer>
